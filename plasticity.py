@@ -465,6 +465,11 @@ load_steps = np.linspace(0, 1.1, Nincr + 1)[1:] ** 0.5
 results = np.zeros((Nincr + 1, 3))
 
 # we set all functions to zero before entering the loop in case we would like to reexecute this code cell
+#
+# modified from fem.Function.vector to fem.Function.x.petsc_vec
+# see: https://fenicsproject.discourse.group/t/how-did-the-function-object-change-in-dolfinx-v0-9-0/16085
+#
+
 sig.x.petsc_vec.set(0.0)
 sig_old.x.petsc_vec.set(0.0)
 p.x.petsc_vec.set(0.0)
